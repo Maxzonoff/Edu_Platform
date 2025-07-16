@@ -1,0 +1,18 @@
+[project]
+name = "edu-platform"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "MaxZ",email = "maxzonoff@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
