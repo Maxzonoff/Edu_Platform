@@ -6,7 +6,7 @@ def insert_user(username: str, password: str) -> None:
         with conn.cursor() as cur:
             cur.execute(
                 "INSERT INTO users (username, password) VALUES (%s, %s)",
-                (username, password)
+                (username, password),
             )
 
 

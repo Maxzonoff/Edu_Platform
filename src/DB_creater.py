@@ -1,5 +1,6 @@
 from src.db import get_connection
 
+
 def create_problem():
     with get_connection() as conn:
         with conn.cursor() as cur:
@@ -27,6 +28,7 @@ def create_submission():
                 )"""
             )
 
+
 def drop_table():
     with get_connection() as conn:
         with conn.cursor() as cur:
@@ -37,9 +39,7 @@ def drop_table():
             )
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     # drop_table()
     create_problem()
     create_submission()

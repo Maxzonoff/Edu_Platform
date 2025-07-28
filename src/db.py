@@ -1,14 +1,15 @@
 import psycopg2
+
 from src.config import Config
 
 
 def get_connection():
-    return psycopg2.connect(host=Config.host,
-                            database=Config.database,
-                            user=Config.db_user,
-                            password=Config.password
-                            )
-
+    return psycopg2.connect(
+        host=Config.host,
+        database=Config.database,
+        user=Config.db_user,
+        password=Config.password,
+    )
 
 
 # запрос создания базы данных

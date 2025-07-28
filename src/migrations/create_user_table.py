@@ -1,16 +1,17 @@
 import os
-import psycopg2
 
+import psycopg2
 from dotenv import load_dotenv
 
 load_dotenv()
 
 conn_params = dict(
-    host=os.getenv('host'),
-    database=os.getenv('database'),
-    user=os.getenv('user'),
-    password=os.getenv('password'),
+    host=os.getenv("host"),
+    database=os.getenv("database"),
+    user=os.getenv("user"),
+    password=os.getenv("password"),
 )
+
 
 def create_user():
     with psycopg2.connect(**conn_params) as conn:
@@ -24,7 +25,6 @@ def create_user():
                     login varchar(100) UNIQUE
                     )"""
             )
-
 
 
 create_user()
