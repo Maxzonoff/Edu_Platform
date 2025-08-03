@@ -1,6 +1,6 @@
 import psycopg2
 
-from src.queries import get_user_id, get_username, insert_user
+from src.queries import get_user_id, get_username, insert_user, select_random_problem, add_answer
 
 
 def main():
@@ -55,7 +55,11 @@ def main():
                 if auth_user_id is None:
                     print("Вы ввели не верный пункт меню ")
                     continue
-                print("Что такое subscriptable?")
+                res = select_random_problem()
+                print(res[1])
+                answer = input('Введите ответ ')
+                add_answer(res[0], auth_user_id, answer)
+                print('Ответ записан в базу данных ')
             case "5":
                 print("Программа завершена. ")
                 return
