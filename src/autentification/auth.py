@@ -15,8 +15,8 @@ conn_params = dict(
 
 
 def auth(login: str) -> int | None:
-    """Функция принимает логин и возвращает ID если он существует
-    либо None если не существует"""
+    """ Функция принимает логин и возвращает ID если он существует
+    либо None если не существует """
     with psycopg2.connect(**conn_params) as conn:
         with conn.cursor() as cur:
             cur.execute(
